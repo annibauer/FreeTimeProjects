@@ -1,0 +1,149 @@
+2024-01-21 01:25:20,093 - INFO - Image link https://i.pinimg.com/736x/12/75/c3/1275c34260c7d32c475b195c706f980b.jpg added to new project
+2024-01-21 01:25:31,401 - INFO - Project save trigger button pressed
+2024-01-21 01:25:31,429 - INFO -  New project Caricature Sketching added
+2024-01-21 01:25:39,014 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:25:42,448 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:26:22,098 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:26:22,136 - INFO - Edited project Caricature Sketching saved. 
+ Project Info:                                      id  hobby                  name       status notes steps_taken steps_todo links                                             images
+1  f76dedcf-7803-48c8-8cf6-3d62d858c897  Kunst  Caricature Sketching  In Progress                []         []    []  [{'images': 'https://i.pinimg.com/736x/12/75/c...
+2024-01-21 01:26:22,143 - INFO - Image link added https://i.pinimg.com/736x/23/f1/f1/23f1f1fec38087ad0efd2ef26bb03541.jpg to project Caricature Sketching
+2024-01-21 01:26:24,538 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:26:24,568 - INFO - Edited project Caricature Sketching saved. 
+ Project Info:                                      id  hobby                  name       status notes steps_taken steps_todo links                                             images
+1  f76dedcf-7803-48c8-8cf6-3d62d858c897  Kunst  Caricature Sketching  In Progress                []         []    []  [{'images': 'https://i.pinimg.com/736x/12/75/c...
+2024-01-21 01:26:26,839 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:26:26,861 - INFO - Edited project Caricature Sketching saved. 
+ Project Info:                                      id  hobby                  name       status notes steps_taken steps_todo links                                             images
+1  f76dedcf-7803-48c8-8cf6-3d62d858c897  Kunst  Caricature Sketching  In Progress                []         []    []  [{'images': 'https://i.pinimg.com/736x/12/75/c...
+2024-01-21 01:29:03,684 - INFO - URL general link https://www.creality.com/products/ender-3-v2-3d-printer-csco added to new project
+2024-01-21 01:30:00,833 - INFO - Image link https://m.media-amazon.com/images/I/71m1Tf4cIUL.jpg added to new project
+2024-01-21 01:30:03,098 - INFO - Project save trigger button pressed
+2024-01-21 01:30:03,115 - INFO -  New project 3D Drucker  added
+2024-01-21 01:30:03,127 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:30:15,160 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:30:20,646 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:30:20,669 - INFO - Edited project Katalysator Einbauen  saved. 
+ Project Info:                                      id           hobby  ...                                              links                                             images
+0  47bd6201-8453-41ac-949d-38d050ebe1fa  BMW Reparieren  ...  [{'links': 'https://www.ebay.de/itm/2663252905...  [{'images': 'https://i.ebayimg.com/images/g/Jk...
+
+[1 rows x 9 columns]
+2024-01-21 01:31:27,969 - INFO - Dash is running on http://127.0.0.1:8050/
+
+2024-01-21 01:34:11,424 - INFO - Image link https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg added to new project
+2024-01-21 01:34:14,090 - INFO - Project save trigger button pressed
+2024-01-21 01:34:14,108 - INFO -  New project Arduino Project added
+2024-01-21 01:38:53,465 - INFO - Image link https://i.pinimg.com/736x/dc/97/46/dc9746a11e683b8624fbdeb11dbbe944.jpg added to new project
+2024-01-21 01:38:55,052 - INFO - Project save trigger button pressed
+2024-01-21 01:38:55,062 - INFO -  New project Sketching added
+2024-01-21 01:39:13,743 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:39:17,465 - INFO - Project to edit opened: Sketching
+2024-01-21 01:40:11,415 - INFO - Project to edit opened: Sketching
+2024-01-21 01:40:11,454 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:40:11,464 - INFO - To-do Manipulate real life portraits added to project Sketching
+2024-01-21 01:40:38,630 - INFO - Project to edit opened: Sketching
+2024-01-21 01:40:38,652 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:40:38,664 - INFO - To-do Research artists added to project Sketching
+2024-01-21 01:40:40,639 - INFO - Project to edit opened: Sketching
+2024-01-21 01:40:40,670 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:41:31,732 - INFO - Project to edit opened: Sketching
+2024-01-21 01:50:39,772 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:50:41,830 - INFO - Project to edit opened: Sketching
+2024-01-21 01:50:48,008 - INFO - Project to edit opened: Sketching
+2024-01-21 01:50:48,040 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:50:48,050 - INFO - Image link added https://i.pinimg.com/736x/6b/17/08/6b17083f6030d9ab90f482d4ab41f45b.jpg to project Sketching
+2024-01-21 01:51:12,243 - INFO - Project to edit opened: Sketching
+2024-01-21 01:51:12,273 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:51:12,283 - INFO - Image link added https://i.pinimg.com/736x/01/fa/60/01fa604b4c5b441f161d71e25366cf54.jpg to project Sketching
+2024-01-21 01:51:34,268 - INFO - Project to edit opened: Sketching
+2024-01-21 01:51:34,301 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:51:34,310 - INFO - Image link added https://i.pinimg.com/736x/98/9f/0f/989f0f1f24ce7ac8df05b9ff1ac07708.jpg to project Sketching
+2024-01-21 01:51:35,956 - INFO - Project to edit opened: Sketching
+2024-01-21 01:51:35,994 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:51:36,006 - INFO - Image link added https://i.pinimg.com/736x/98/9f/0f/989f0f1f24ce7ac8df05b9ff1ac07708.jpg to project Sketching
+2024-01-21 01:51:39,045 - INFO - Project to edit opened: Sketching
+2024-01-21 01:51:39,076 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:52:22,580 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:52:24,522 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:53:15,380 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:53:15,416 - INFO - Edited project Caricature Sketching saved. 
+ Project Info:                                      id  hobby                  name       status  ... steps_taken                                         steps_todo links                                             images
+1  f76dedcf-7803-48c8-8cf6-3d62d858c897  Kunst  Caricature Sketching  In Progress  ...          []  [{'steps_todo': 'Sketch Caricature from Real P...    []  [{'images': 'https://i.pinimg.com/736x/12/75/c...
+
+[1 rows x 9 columns]
+2024-01-21 01:53:15,427 - INFO - To-do Sketch Caricature from Real Portrait added to project Caricature Sketching
+2024-01-21 01:53:58,788 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:53:58,822 - INFO - Edited project Caricature Sketching saved. 
+ Project Info:                                      id  hobby                  name  ...                                         steps_todo links                                             images
+1  f76dedcf-7803-48c8-8cf6-3d62d858c897  Kunst  Caricature Sketching  ...  [{'steps_todo': 'Sketch Caricature from Real P...    []  [{'images': 'https://i.pinimg.com/736x/12/75/c...
+
+[1 rows x 9 columns]
+2024-01-21 01:53:58,831 - INFO - Step taken Random imagined sketches added to project Caricature Sketching
+2024-01-21 01:54:02,267 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:54:02,300 - INFO - Edited project Caricature Sketching saved. 
+ Project Info:                                      id  hobby                  name  ...                                         steps_todo links                                             images
+1  f76dedcf-7803-48c8-8cf6-3d62d858c897  Kunst  Caricature Sketching  ...  [{'steps_todo': 'Sketch Caricature from Real P...    []  [{'images': 'https://i.pinimg.com/736x/12/75/c...
+
+[1 rows x 9 columns]
+2024-01-21 01:54:30,934 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:54:37,056 - INFO - Project to edit opened: Sketching
+2024-01-21 01:54:41,406 - INFO - Project to edit opened: Sketching
+2024-01-21 01:54:41,437 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:54:50,487 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:54:57,720 - INFO - Project to edit opened: Sketching
+2024-01-21 01:55:09,477 - INFO - Project to edit opened: Sketching
+2024-01-21 01:55:09,506 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:55:19,157 - INFO - Project to edit opened: Sketching
+2024-01-21 01:55:19,184 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:55:40,169 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:55:43,439 - INFO - Project to edit opened: 3D Drucker 
+2024-01-21 01:55:46,231 - INFO - Project to edit opened: Caricature Sketching
+2024-01-21 01:55:48,217 - INFO - Project to edit opened: Sketching
+2024-01-21 01:55:53,536 - INFO - Project to edit opened: Sketching
+2024-01-21 01:55:53,558 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:56:29,156 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:56:32,427 - INFO - Project to edit opened: Sketching
+2024-01-21 01:56:41,902 - INFO - Project to edit opened: Sketching
+2024-01-21 01:56:41,930 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 01:56:50,464 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 01:56:58,523 - INFO - Project to edit opened: Sketching
+2024-01-21 01:57:06,453 - INFO - Project to edit opened: Sketching
+2024-01-21 01:57:06,481 - INFO - Edited project Sketching saved. 
+ Project Info:                                      id  hobby       name       status notes steps_taken                                         steps_todo links                                             images
+4  32982785-140b-4a0f-9a91-69d6aa82da1f  Kunst  Sketching  In Progress                []  [{'steps_todo': 'Manipulate real life portrait...    []  [{'images': 'https://i.pinimg.com/736x/dc/97/4...
+2024-01-21 10:45:54,291 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 10:48:28,389 - INFO - Dash is running on http://127.0.0.1:8050/
+
+2024-01-21 10:48:34,402 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 10:48:46,307 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 10:50:39,640 - INFO - Dash is running on http://127.0.0.1:8050/
+
+2024-01-21 10:56:05,050 - INFO - Project to edit opened: Katalysator Einbauen 
+2024-01-21 11:49:21,942 - INFO - Dash is running on http://127.0.0.1:8050/
+
