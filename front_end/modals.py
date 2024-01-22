@@ -10,11 +10,12 @@ style_image_inputs = { 'height':'100%', 'align':'right'}
 style_row_link_table = {'height':'100%'}
 width_col_modal_label = 2
 width_col_modal_inputs = 9
-style_table_links = {"width": "100%", "height":"100%", "overflowX": "auto","background-color":"rgba(0,0,0,0.5)"}
-style_inputs_url = {"width": "100%", 'padding-top':'10px'}
+style_table_links = {"width": "100%", "height":"100%", "overflowX": "auto","background-color":"rgba(0,0,0,0.5)", "color":"black"}
+style_inputs_url = {"width": "100%", 'margin-top':'20px', 'margin-bottom': '10px'}
 style_inputs_general = {"width": "100%"}
 style_input_notes = {"height": "200px", "width":"100%"}
 style_header = {'display': 'none'}
+style_dropdown = {'color':"black"}
 
 new_project_modal_element =  html.Div([dbc.Modal(children=[
                 dbc.ModalHeader(dbc.ModalTitle("New Project")),
@@ -50,7 +51,7 @@ new_project_modal_element =  html.Div([dbc.Modal(children=[
                             html.H6('Project Status')
                         ],width=width_col_modal_label),
                         dbc.Col([
-                            dcc.Dropdown(project_status_array, project_status_array[0], id='dd_project_status'),
+                            dcc.Dropdown(project_status_array, project_status_array[0], id='dd_project_status', style=style_dropdown),
                         ], width=width_col_modal_inputs)],  style=style_inner_modals),
                     dbc.Row([
                         dbc.Col([
@@ -133,7 +134,7 @@ edit_project_modal_element =  html.Div([dbc.Modal(children=[
                 dbc.ModalBody([
                     dbc.Row([
                         dbc.Col([html.H5("Select Project to Edit")]),
-                        dbc.Col([dcc.Dropdown(id='edit_projects_dropdown')
+                        dbc.Col([dcc.Dropdown(id='edit_projects_dropdown', style=style_dropdown)
                         ])], style=style_inner_modals),
                     
                     dbc.Row([
@@ -168,7 +169,7 @@ edit_project_modal_element =  html.Div([dbc.Modal(children=[
                             html.H6('Project Status')
                         ]),
                         dbc.Col([
-                            dcc.Dropdown(project_status_array, project_status_array[0], id='dd_project_status_edit'),
+                            dcc.Dropdown(project_status_array, project_status_array[0], id='dd_project_status_edit', style=style_dropdown),
                         ])], style=style_inner_modals),
                     dbc.Row([
                         dbc.Col([
@@ -253,13 +254,12 @@ delete_project_modal_element =  html.Div([dbc.Modal(children=[
                 dbc.ModalBody([
                     dbc.Row([
                         dbc.Col([html.H5("Select Project to Delete")]),
-                        dbc.Col([dcc.Dropdown(id='delete_projects_dropdown')
+                        dbc.Col([dcc.Dropdown(id='delete_projects_dropdown', style=style_dropdown)
                         ])], style=style_inner_modals),
     
                     dbc.Row([html.H6(id='project_delete_status')], style=style_inner_modals),
                     dbc.Row([dbc.Button("Delete Project", id="delete_project_btn", className="me-1", n_clicks=0)], style=style_inner_modals)
-                    ]),
-                    
+                    ]),        
             ],
             id="delete_project_modal",
             size="lg",

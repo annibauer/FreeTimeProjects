@@ -14,14 +14,13 @@ import logging
 
 from front_end.modals import new_project_modal_element, edit_project_modal_element, delete_project_modal_element
 from front_end.overview import overview_button_group, project_cards_overview_element
-from back_end.project import Project
-from back_end.storage_functions import extract_information_df, read_stored_information, delete_project_with_name, save_edited_project
-from back_end.data_processing import transform_stored_data_links
+from functions.project import Project
+from functions.storage_functions import extract_information_df, read_stored_information
+from functions.data_processing import transform_stored_data_links
+from functions.project_info_processing import add_new_project, delete_project_with_name, save_edited_project, load_data_into_modal, add_image_to_new_project, add_general_link_to_new_project, add_steps_taken_to_new_project, add_steps_todo_to_new_project
 from storage.settings import json_storage_file, local_media_directiory
 
-
 dash.register_page(__name__, path='/')
-
 
 layout = html.Div([
     overview_button_group,
@@ -54,7 +53,7 @@ def project_modal(n_new, n_new_add):
     
     
     
-# Add New Project To Storage
+# Manipulate Projects 
 @callback([
     # project cards to display
     Output("project_cards_overview","children"),
@@ -122,103 +121,38 @@ def project_modal(n_new, n_new_add):
        ]
     
 )
-def add_new_project(n_new, n_edit_save, n_delete, list_of_cards, input_project_name, input_hobby_name, input_notes, project_status_input, input_links ,input_image_links, input_steps_taken, input_steps_todo, selected_project_to_edit, input_project_name_edit, input_hobby_name_edit, input_notes_edit, project_status_input_edit, input_links_edit, input_image_links_edit, input_steps_taken_edit , input_steps_todo_edit, selected_project_delete, n_image_edit, n_links_edit, image_link, url_link, n_steps_taken_edit, n_steps_todo_edit, input_step_taken, input_step_todo): 
+def manipulate_project_info(n_new, n_edit_save, n_delete, list_of_cards, input_project_name, input_hobby_name, input_notes, project_status_input, input_links ,input_image_links, input_steps_taken, input_steps_todo, selected_project_to_edit, input_project_name_edit, input_hobby_name_edit, input_notes_edit, project_status_input_edit, input_links_edit, input_image_links_edit, input_steps_taken_edit , input_steps_todo_edit, selected_project_delete, n_image_edit, n_links_edit, image_link, url_link, n_steps_taken_edit, n_steps_todo_edit, input_step_taken, input_step_todo): 
     project_save_status = ''
 
-    
     # WHEN SAVE NEW PROJECT PRESSED
     if n_new != 0:
-        logging.info("Project save trigger button pressed")
-        
-        # create and save new project
-        new_project = Project(input_project_name, input_hobby_name, project_status_input, input_notes, str(input_steps_taken), str(input_steps_todo), str(input_links), str(input_image_links))
-        new_project.save_project(json_storage_file)
-        project_save_status = 'Project: '+ str(input_project_name) + ' saved.'
-        
-        logging.info(f' New project {input_project_name} added')
 
-        # read saved project data to display
-        list_of_cards, project_names = extract_information_df(json_storage_file)
+        list_of_cards, project_names, n_new, project_save_status, input_project_name, input_hobby_name, input_notes, project_status_input = add_new_project(json_storage_file, input_project_name, input_hobby_name, project_status_input, input_notes, input_steps_taken, input_steps_todo, input_links, input_image_links)
 
-        # reset add new project button
-        n_new = 0
-        
-        input_project_name, input_hobby_name, input_notes, project_status_input = '','','',''
 
     # WHEN DELETE PROJECT PRESSED
     elif(n_delete != 0 and selected_project_delete != None):
         delete_project_with_name(json_storage_file, selected_project_delete)     
-        
         # reset delete project button
         n_delete = 0
 
         
     # if within edit project modal a project is selected to be edited    
     if(selected_project_to_edit != None):
-        logging.info(f"Project to edit opened: {selected_project_to_edit}")
         
-        # load selected project
-        project_df = read_stored_information(json_storage_file)
-        project_to_edit= project_df[project_df['name']== selected_project_to_edit]
-        
-        # load saved data from selected project into inputs
-        input_edit_project_name = project_to_edit['name'].values[:1][0]
-        input_edit_project_hobby = project_to_edit['hobby'].values[:1][0]
-        input_edit_project_notes = project_to_edit['notes'].values[:1][0]
-        dd_project_status_edit = project_to_edit['status'].values[:1][0]
-        dict_images = project_to_edit['images'].values[:1][0]
-        dict_links = project_to_edit['links'].values[:1][0]
-        dict_steps_taken = project_to_edit['steps_taken'].values[:1][0]
-        dict_steps_todo = project_to_edit['steps_todo'].values[:1][0]
-        # transform string of dict into dict for dashtable
-        image_links_edit = transform_stored_data_links(dict_images).to_dict('records')
-        links_edit = transform_stored_data_links(dict_links).to_dict('records')
-        steps_taken_edit = transform_stored_data_links(dict_steps_taken).to_dict('records')
-        steps_todo_edit = transform_stored_data_links(dict_steps_todo).to_dict('records')
-
+        input_edit_project_name, input_edit_project_hobby, input_edit_project_notes, dd_project_status_edit, image_links_edit, links_edit, steps_taken_edit, steps_todo_edit = load_data_into_modal(json_storage_file,selected_project_to_edit)
         # add image link and save edited project
         if(n_image_edit != 0):
-            input_image_links_edit = pd.DataFrame.from_dict(input_image_links_edit)
-            input_image_links_edit = pd.concat([input_image_links_edit, pd.DataFrame({'images': [image_link]})]) 
-            input_image_links_edit.reset_index()
-            image_links_edit = input_image_links_edit.to_dict('records')
-            list_of_cards, project_names  = save_edited_project(json_storage_file, selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, input_links_edit, input_steps_taken_edit, input_steps_todo_edit)
-            n_image_edit = 0 
-            logging.info(f"Image link added {image_link} to project {selected_project_to_edit}")
-            
+            list_of_cards, n_image_edit, image_links_edit, image_link = add_image_to_new_project(json_storage_file,  selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_link, input_links_edit, input_steps_taken_edit, input_steps_todo_edit)
          # add general link and save edited project
         elif(n_links_edit != 0):
-            input_links_edit = pd.DataFrame.from_dict(input_links_edit)
-            input_links_edit = pd.concat([input_links_edit, pd.DataFrame({'links': [url_link]})]) 
-            input_links_edit.reset_index()
-            links_edit = input_links_edit.to_dict('records')
-            list_of_cards, project_names  = save_edited_project(json_storage_file, selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, links_edit, steps_taken_edit, steps_todo_edit)
-            # reset button    
-            n_links_edit = 0
-            logging.info(f"General URL link added {url_link} to project {selected_project_to_edit}")
-            
+            list_of_cards, n_links_edit,links_edit, url_link = add_general_link_to_new_project(json_storage_file, selected_project_to_edit, input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, steps_taken_edit, steps_todo_edit)
         # add step taken to save edited project
-        elif(n_steps_taken_edit != 0):
-            input_steps_taken_edit = pd.DataFrame.from_dict(input_steps_taken_edit)
-            input_steps_taken_edit = pd.concat([input_steps_taken_edit, pd.DataFrame({'steps_taken': [input_step_taken]})]) 
-            input_steps_taken_edit.reset_index()
-            steps_taken_edit = input_steps_taken_edit.to_dict('records')
-            list_of_cards, project_names  = save_edited_project(json_storage_file, selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, links_edit, steps_taken_edit, steps_todo_edit)
-            # reset button    
-            n_steps_taken_edit = 0
-            logging.info(f"Step taken {input_step_taken} added to project {selected_project_to_edit}")
-            
+        elif(n_steps_taken_edit != 0):            
+            list_of_cards, n_steps_taken_edit, steps_taken_edit, input_step_taken = add_steps_taken_to_new_project(json_storage_file, selected_project_to_edit, input_step_taken ,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, links_edit,steps_todo_edit)              
         # add general link and save edited project
         elif(n_steps_todo_edit != 0):
-            input_steps_todo_edit = pd.DataFrame.from_dict(input_steps_todo_edit)
-            input_steps_todo_edit = pd.concat([input_steps_todo_edit, pd.DataFrame({'steps_todo': [input_step_todo]})]) 
-            input_steps_todo_edit.reset_index()
-            steps_todo_edit = input_steps_todo_edit.to_dict('records')
-            list_of_cards, project_names  = save_edited_project(json_storage_file, selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, links_edit, steps_taken_edit, steps_todo_edit)
-            # reset button    
-            n_steps_todo_edit = 0
-            logging.info(f"To-do {input_step_todo} added to project {selected_project_to_edit}")
-                
+            list_of_cards, n_steps_todo_edit, steps_todo_edit, input_step_todo = add_steps_todo_to_new_project(json_storage_file, selected_project_to_edit, input_step_todo, input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, links_edit, steps_taken_edit, steps_todo_edit)
         # save edited project pressed
         elif(n_edit_save != 0):
             list_of_cards, project_names  = save_edited_project(json_storage_file, selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, links_edit, steps_taken_edit, steps_todo_edit)

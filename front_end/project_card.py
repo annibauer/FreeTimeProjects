@@ -1,17 +1,18 @@
 import dash_bootstrap_components as dbc
 from dash import html, dcc, dash_table
 import pandas as pd
-from back_end.data_processing import transform_stored_data_links, transform_stored_data_links_url, transform_stored_data_carousel
+from functions.data_processing import transform_stored_data_links, transform_stored_data_links_url, transform_stored_data_carousel
 from storage.settings import project_status_array, project_status_color_array
 
 
 style_carousel = {'width': 'auto', 'justify':'center', 'margin':'10px'}
 style_row = {'justify':'center'}
 style_table_div= {'margin':'10px'}
-style_table ={"width": "100%", "overflowX": "auto", "background-color":"rgba(0,0,0,0)", "color":"black"}
+style_table ={"width": "100%", "overflowX": "auto", 'background-color': 'rgba(255, 255, 0, 0.5)', "color":"black"}
 style_title_info = {'margin':'0px'}
 style_header = {'fontWeight': 'bold', 'textAlign': 'center'}
 style_cell = {'textAlign': 'left'}
+style_card= {"font-size": "80%", "margin":"10px","height":"100%"}
 
 def project_card(project): 
     links_table_df = transform_stored_data_links_url(project["links"])
@@ -43,7 +44,7 @@ def project_card(project):
                 ]
             ),
             dbc.CardFooter(project["status"], style=style_footer),
-        ], style={"font-size": "70%", "margin":"10px" },
+        ], style=style_card,
     )], width=6)
         
     return card

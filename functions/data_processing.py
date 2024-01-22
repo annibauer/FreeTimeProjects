@@ -9,9 +9,6 @@ def transform_stored_data_links(dict_images):
     data_table = pd.DataFrame(data=d)
     return data_table
 
-def make_url_clickable(url):
-    return dcc.Link(url, href=url)
-
 def transform_stored_data_links_url(dict_links):
     json_acceptable_string = dict_links.replace("'", "\"")
     d = json.loads(json_acceptable_string)          

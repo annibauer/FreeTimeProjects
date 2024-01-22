@@ -24,7 +24,7 @@ style_home_links = {'margin:': '10px', 'padding':'10px'}
 
 
 # Set up main app 
-app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.QUARTZ, dbc.icons.BOOTSTRAP])
+app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.QUARTZ, dbc.icons.BOOTSTRAP], suppress_callback_exceptions=True)
 
 # define nav bar to navigate between multiple pages
 navbar = dbc.NavbarSimple(
