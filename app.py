@@ -17,7 +17,7 @@ handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)
 
 logger = logging.getLogger()
 logger.addHandler(handler)
-logger.setLevel(logging.INFO)
+#logger.setLevel(logging.INFO)
 
 style_home_header={'margin':'10px', 'padding':'10px'}
 style_home_links = {'margin:': '10px', 'padding':'10px'}

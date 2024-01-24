@@ -16,6 +16,7 @@ style_inputs_general = {"width": "100%"}
 style_input_notes = {"height": "200px", "width":"100%"}
 style_header = {'display': 'none'}
 style_dropdown = {'color':"black"}
+style_date_picker = {'width':'100%', 'margin':'20px'}
 
 new_project_modal_element =  html.Div([dbc.Modal(children=[
                 dbc.ModalHeader(dbc.ModalTitle("New Project")),
@@ -262,6 +263,47 @@ delete_project_modal_element =  html.Div([dbc.Modal(children=[
                     ]),        
             ],
             id="delete_project_modal",
+            size="lg",
+            is_open=False,
+            style=style_modals
+        )])
+
+
+add_event_modal =  html.Div([dbc.Modal(children=[
+                dbc.ModalHeader(dbc.ModalTitle("Add Event")),
+                dbc.ModalBody([
+                    dbc.Row([
+                        dbc.Col([html.H5("Select Project")]),
+                        dbc.Col([dcc.Dropdown(id='select_event_projects_dropdown', style=style_dropdown)
+                        ])], style=style_inner_modals),
+                    dbc.Row([
+                        dbc.Col([html.H5("Select Date")]),
+                        dbc.Col([
+                            dcc.DatePickerSingle(
+                                id='date-picker-add-event'
+                            ),
+                            html.Div(id='output_date_picker_add_event')
+                            ]),
+                        ], style=style_inner_modals),
+                    dbc.Row([
+                        dbc.Col([
+                            html.H5("Event Description")
+                        ]),
+                        dbc.Col([
+                            dcc.Input(id='event_description', placeholder='Event Description', style=style_inputs_general)
+                        ])
+                        ],  style=style_inner_modals),
+                    dbc.Row([
+                        dbc.Col([
+                            html.H5("Event Duration [hours]")
+                        ]),
+                        dbc.Col([dcc.Dropdown(id='hours_event_dropdown', style=style_dropdown)])
+                        ], style=style_inner_modals),
+
+                    dbc.Row([dbc.Button("Add Event", id="add_event_btn", n_clicks=0)], style=style_inner_modals)
+                    ]),        
+            ],
+            id="modal_add_event",
             size="lg",
             is_open=False,
             style=style_modals

@@ -26,3 +26,4 @@ def transform_stored_data_carousel(dict_images):
         key = key+1 
         
     return items
+

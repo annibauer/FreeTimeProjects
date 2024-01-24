@@ -26,3 +26,11 @@ def extract_information_df(path):
         
     return list_of_cards, project_names
 
+def read_stored_events_information(path):
+    try:
+        events_df = pd.read_json(path)
+    except:
+        events_df = pd.DataFrame()
+        events_df.to_json(path)     
+    
+    return events_df
