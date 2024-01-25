@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-from dash import dcc
+from dash import dcc, no_update
 
 # transform stored strings of dict variables within saved dataframe back into dictionaries and transformed to 
 def transform_stored_data_links(dict_images):
@@ -26,4 +26,10 @@ def transform_stored_data_carousel(dict_images):
         key = key+1 
         
     return items
+
+def output_generator_collapsable(project_ids, index, args):
+    outputs =[no_update for project in project_ids]
+    outputs[index] = bool(not args[index] % 2 == 0)
+    return outputs
+
 

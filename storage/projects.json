@@ -1,1 +1,92 @@
-{"id":{"0":"bc7b9f60-8a74-4e00-822a-d5538711afb7"},"hobby":{"0":"BMW Reparieren"},"name":{"0":"Katalysator Austauschen"},"status":{"0":"In Preparation"},"notes":{"0":"Call Mietwerkstatt when converter arrives via mail \n"},"steps_taken":{"0":"[{'steps_taken': 'Research parts'}]"},"steps_todo":{"0":"[{'steps_todo': 'Call Mietwerkstatt '}, {'steps_todo': 'Pick up auspuffdichtmasse'}]"},"links":{"0":"[]"},"images":{"0":"[{'images': 'https:\/\/prod.pictures.autoscout24.net\/listing-images\/c323cc18-dde5-4664-af00-a1e6ab72a32d_e7814f5f-987f-4411-8a57-df0c8395fed6.jpg\/720x540.webp'}]"}}
+{
+    "id": {
+        "0": "d6e43300-48be-4a93-91d8-5e910d7e7f3e",
+        "1": "0f19b519-1159-4a5c-a1f2-64a8c823a761",
+        "2": "fdf3c7f5-b86e-4ac8-9762-55babec2da2b",
+        "3": "36cfd6fb-3f8c-4083-8ff3-396d1208a9a5",
+        "4": "6b22d492-b694-49d0-bb36-2e326c00b050",
+        "5": "5001182f-d4ea-41de-9035-cae8c6311428",
+        "6": "98415f74-eb36-4162-a83d-fabed0c0df83",
+        "7": "8a59f867-788c-48fc-a767-2261cc1d2407"
+    },
+    "hobby": {
+        "0": "job hunt",
+        "1": "job hunt",
+        "2": "self care",
+        "3": "self care",
+        "4": "self care",
+        "5": "hobbies",
+        "6": "hobbies",
+        "7": "hobbies"
+    },
+    "name": {
+        "0": "Applications",
+        "1": "DailyActivity Planning App",
+        "2": "Jogging",
+        "3": "Weight Training",
+        "4": "Stretching",
+        "5": "BMW Kat Austauschen",
+        "6": "Sketching",
+        "7": "Hardware Project"
+    },
+    "status": {
+        "0": "In Progress",
+        "1": "In Progress",
+        "2": "In Progress",
+        "3": "In Progress",
+        "4": "In Progress",
+        "5": "In Progress",
+        "6": "In Progress",
+        "7": "Planned"
+    },
+    "notes": {
+        "0": "",
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": ""
+    },
+    "steps_taken": {
+        "0": "[{'steps_taken': '3 Applications Sent '}, {'steps_taken': 'ALTEN BMW Interview'}, {'steps_taken': 'MES Interview'}, {'steps_taken': 'FZI Interview'}]",
+        "1": "[{'steps_taken': 'Calendar Feature'}, {'steps_taken': 'Calendar Feature '}, {'steps_taken': 'Calendar Events Feature'}]",
+        "2": "[{'steps_taken': '15 min (2 km)'}]",
+        "3": "[{'steps_taken': 'Arms '}]",
+        "4": "[{'steps_taken': 'Leg Stretches'}]",
+        "5": "[{'steps_taken': 'Katalysator Kaufen'}, {'steps_taken': 'Mietwerkstatt Anrufen'}, {'steps_taken': 'Auspuffdichtmasse kaufen'}]",
+        "6": "[{'steps_taken': 'Hands Sketch'}]",
+        "7": "[]"
+    },
+    "steps_todo": {
+        "0": "[]",
+        "1": "[]",
+        "2": "[]",
+        "3": "[]",
+        "4": "[]",
+        "5": "[]",
+        "6": "[]",
+        "7": "[]"
+    },
+    "links": {
+        "0": "[]",
+        "1": "[]",
+        "2": "[]",
+        "3": "[]",
+        "4": "[]",
+        "5": "[]",
+        "6": "[]",
+        "7": "[]"
+    },
+    "images": {
+        "0": "[{'images': 'https:\/\/unblast.com\/wp-content\/uploads\/2020\/05\/Job-Hunting-Illustration.jpg'}]",
+        "1": "[{'images': 'https:\/\/as2.ftcdn.net\/v2\/jpg\/01\/04\/51\/69\/1000_F_104516950_dw03rEsb4XkadpXjMLgLZLckwyzBLRPp.jpg'}]",
+        "2": "[{'images': 'https:\/\/www.achilles-running.de\/wp-content\/uploads\/sportler-auf-laufband-fitnessstudio.jpg'}]",
+        "3": "[{'images': 'https:\/\/images.squarespace-cdn.com\/content\/v1\/5bfc308370e80274ebd661ab\/1701246522437-44QZ7OKU0POTOZS2XV3T\/image-asset.jpeg?format=2500w'}]",
+        "4": "[{'images': 'https:\/\/media.foodspring.com\/magazine\/public\/uploads\/2020\/11\/aktives-stretching-fizkes.png'}]",
+        "5": "[{'images': 'https:\/\/prod.pictures.autoscout24.net\/listing-images\/c323cc18-dde5-4664-af00-a1e6ab72a32d_6136ec3e-a929-41f3-853a-7875f9d1cd61.jpg\/1920x1080.webp'}]",
+        "6": "[{'images': 'https:\/\/i.pinimg.com\/736x\/ee\/78\/09\/ee7809f928b06dbf4bdeb49ff0268ded.jpg'}, {'images': 'https:\/\/i.pinimg.com\/736x\/12\/75\/c3\/1275c34260c7d32c475b195c706f980b.jpg'}, {'images': 'https:\/\/i.pinimg.com\/736x\/23\/f1\/f1\/23f1f1fec38087ad0efd2ef26bb03541.jpg'}, {'images': 'https:\/\/i.pinimg.com\/736x\/01\/fa\/60\/01fa604b4c5b441f161d71e25366cf54.jpg'}, {'images': 'https:\/\/i.pinimg.com\/736x\/98\/9f\/0f\/989f0f1f24ce7ac8df05b9ff1ac07708.jpg'}]",
+        "7": "[{'images': 'https:\/\/aduk.de\/wp-content\/uploads\/2021\/11\/fkkf-2.jpg'}]"
+    }
+}

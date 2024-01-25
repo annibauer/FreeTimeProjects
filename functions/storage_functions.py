@@ -20,11 +20,13 @@ def extract_information_df(path):
         projects_df = pd.read_json(path)
         list_of_cards = convert_dataframe_to_cards(projects_df)
         project_names = list(projects_df.get('name'))
+        project_ids = list(projects_df.get('id'))
     except:
         list_of_cards = []
         project_names = []
+        project_ids = []
         
-    return list_of_cards, project_names
+    return list_of_cards, project_names, project_ids
 
 def read_stored_events_information(path):
     try:

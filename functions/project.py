@@ -35,7 +35,6 @@ class Project:
             logging.debug(f"Exception occured: {error} \n New JSON file created.")
             projects_df = pd.DataFrame(vars(self))
 
-        
         # save combined dataframe in json
         projects_df.to_json(path_)       
     

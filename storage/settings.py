@@ -4,3 +4,4 @@ json_storage_file = './storage/projects.json'
 json_events_file = './storage/events.json'
 local_media_directiory = '/assets/'
 productive_hours = 6
+activity_category = ['self care','hobbies','job hunt']

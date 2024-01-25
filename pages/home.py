@@ -1,5 +1,5 @@
 import dash
-from dash import Dash, html, dcc, html, Input, Output, callback, State
+from dash import Dash, html, dcc, html, Input, Output, callback, State, no_update
 import pandas as pd
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
@@ -16,11 +16,13 @@ from front_end.modals import new_project_modal_element, edit_project_modal_eleme
 from front_end.overview import overview_button_group, project_cards_overview_element
 from functions.project import Project
 from functions.storage_functions import extract_information_df, read_stored_information
-from functions.data_processing import transform_stored_data_links
+from functions.data_processing import transform_stored_data_links, output_generator_collapsable
 from functions.project_info_processing import add_new_project, delete_project_with_name, save_edited_project, load_data_into_modal, add_image_to_new_project, add_general_link_to_new_project, add_steps_taken_to_new_project, add_steps_todo_to_new_project
 from storage.settings import json_storage_file, local_media_directiory
 
 dash.register_page(__name__, path='/')
+
+project_ids = []
 
 layout = html.Div([
     overview_button_group,
@@ -30,6 +32,7 @@ layout = html.Div([
     project_cards_overview_element
   
 ],style={'textAlign': 'center', 'padding':'10px'})
+
 
 
 # Open Modal To Enter Details For New Project
@@ -143,7 +146,7 @@ def manipulate_project_info(n_new, n_edit_save, n_delete, list_of_cards, input_p
         input_edit_project_name, input_edit_project_hobby, input_edit_project_notes, dd_project_status_edit, image_links_edit, links_edit, steps_taken_edit, steps_todo_edit = load_data_into_modal(json_storage_file,selected_project_to_edit)
         # add image link and save edited project
         if(n_image_edit != 0):
-            list_of_cards, n_image_edit, image_links_edit, image_link = add_image_to_new_project(json_storage_file,  selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_link, input_links_edit, input_steps_taken_edit, input_steps_todo_edit)
+            list_of_cards, n_image_edit, image_links_edit, image_link = add_image_to_new_project(json_storage_file, selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_link, input_links_edit, input_steps_taken_edit, input_steps_todo_edit)
          # add general link and save edited project
         elif(n_links_edit != 0):
             list_of_cards, n_links_edit,links_edit, url_link = add_general_link_to_new_project(json_storage_file, selected_project_to_edit, input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, steps_taken_edit, steps_todo_edit)
@@ -169,8 +172,8 @@ def manipulate_project_info(n_new, n_edit_save, n_delete, list_of_cards, input_p
         steps_taken_edit = pd.DataFrame().to_dict('records')
         steps_todo_edit = pd.DataFrame().to_dict('records')
         
-
-    list_of_cards, project_names = extract_information_df(json_storage_file)
+    global project_ids
+    list_of_cards, project_names, project_ids = extract_information_df(json_storage_file)
     
     return list_of_cards,  n_new, project_save_status , n_delete, input_project_name, input_hobby_name, input_notes, project_status_input, n_edit_save, input_edit_project_name, input_edit_project_hobby, input_edit_project_notes, dd_project_status_edit, image_links_edit, links_edit , n_image_edit, n_links_edit, steps_taken_edit, steps_todo_edit,  n_steps_taken_edit, n_steps_todo_edit
     
@@ -193,10 +196,16 @@ def edit_project_modal(n):
         edit_projects_dropdown_value = None
 
     else:
-        list_of_cards, project_names = extract_information_df(json_storage_file)
-        edit_project_modal = True
-        edit_projects_dropdown_options = project_names
-        edit_projects_dropdown_value = project_names[0]
+        global project_ids
+        list_of_cards, project_names, project_ids = extract_information_df(json_storage_file)
+        if(project_names != []):
+            edit_project_modal = True
+            edit_projects_dropdown_options = project_names
+            edit_projects_dropdown_value = project_names[0]
+        else:
+            edit_project_modal = False
+            edit_projects_dropdown_options = []
+            edit_projects_dropdown_value = None
                 
     edit_project_info_click = 0
     return edit_project_modal, edit_projects_dropdown_options, edit_projects_dropdown_value , edit_project_info_click 
@@ -216,7 +225,8 @@ def project_delete_modal(n_delete_info):
 
     else:
         delete_project_modal_visible = True
-        list_of_cards, project_names = extract_information_df(json_storage_file)
+        global project_ids
+        list_of_cards, project_names, project_ids = extract_information_df(json_storage_file)
         delete_projects_dropdown_options = project_names
     
     n_delete_info = 0
@@ -313,5 +323,19 @@ def add_image_new_modal(n_image_link, image_link, image_df, n_link, links_value,
 
     return n_image_link, image_table, n_link, links_table, n_steps_taken, steps_taken_table, n_steps_todo, steps_todo_table
    
-   
+ 
+
+list_of_cards, project_names, project_ids = extract_information_df(json_storage_file)
+if(project_ids != []):
+    # Callbacks to toggle visibility of content
+    @callback(
+        [Output((f"collapse_project_{project_id}"), "is_open") for project_id in project_ids],
+        [Input((f"collapse_button_{project_id}"), "n_clicks") for project_id in project_ids],
+        prevent_initial_call=True,
+    )
+    def toggle_collapse(*args):
+        ctx = dash.callback_context
+        triggered_id = ctx.triggered_id.split("_")[-1]
+        index =project_ids.index(triggered_id)
+        return output_generator_collapsable(project_ids, index, args)
 

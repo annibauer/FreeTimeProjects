@@ -3,6 +3,7 @@ from dash import html, dcc
 from storage.settings import project_status_array
 from dash import dash_table
 import pandas as pd
+from storage.settings import activity_category
 
 style_modals = {'padding':'30px'}
 style_inner_modals = {'padding':'10px','margin':'20px'}
@@ -32,8 +33,7 @@ new_project_modal_element =  html.Div([dbc.Modal(children=[
                         dbc.Col([
                             html.H6('Hobby ')
                         ],width=width_col_modal_label),
-                        dbc.Col([
-                            dcc.Input(id="input_new_project_hobby", type="text", placeholder="Enter Hobby Name", style=style_inputs_general)
+                        dbc.Col([dcc.Dropdown(id='input_new_project_hobby', options=activity_category, style=style_dropdown)
                         ], width=width_col_modal_inputs)],  style=style_inner_modals),
                     dbc.Row([
                         dbc.Col([

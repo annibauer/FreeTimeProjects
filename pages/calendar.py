@@ -26,8 +26,9 @@ import calendar
 
 from front_end.modals import add_event_modal
 from functions.event import Event
-from functions.storage_functions import extract_information_df, read_stored_events_information
+from functions.storage_functions import extract_information_df, read_stored_events_information, read_stored_information
 from storage.settings import json_storage_file, local_media_directiory, json_events_file, productive_hours
+from functions.project_info_processing import add_new_event
 
 dash.register_page(__name__)
 
@@ -46,7 +47,6 @@ def generate_calendar(year, month):
             ))
             
     weeks.append(html.Div(week_row_title, className="d-flex justify-content-center"))
-    
     events_df = read_stored_events_information(json_events_file)
     
     for week in cal:
@@ -61,10 +61,14 @@ def generate_calendar(year, month):
                     month = '0'+ str(month)
                 if(len(str(day)) != 2):
                     day = '0'+str(day)                 
-                
-                day_events = events_df.loc[events_df['event_date'] == str(year)+"-"+str(month)+"-"+str(day)]
-                events_names = day_events.filter(items=['project_name','description']) 
-                progress_value = (np.sum(day_events['duration'].values)/productive_hours) * 100
+                try:
+                    day_events = events_df.loc[events_df['event_date'] == str(year)+"-"+str(month)+"-"+str(day)]
+                    events_names = day_events.filter(items=['project_name','description']) 
+                    progress_value = (np.sum(day_events['duration'].values)/productive_hours) * 100
+                except Exception as error:
+                    logging.debug("f Reading Json file error:  {error}")
+                    events_names = pd.DataFrame({}, columns=['project_name','description'])
+                    progress_value = 0
                     
                 week_row.append(dbc.Card(
                     [
@@ -150,12 +154,10 @@ def update_calendar(selected_month, selected_year, date_value, project_name_even
         date_string = date_object.strftime('%B %d, %Y')
         date_selected = string_prefix + date_string
     if n_clicks_add_event != 0 and project_name_event != None :
-        print("SAVE EVENT")
-        new_event = Event(project_name_event, date_value, event_descrption, hours_event)
-        new_event.save_event(json_events_file)
         
-        # SAVE STEPS TAKEN SIMULTAENOSLY
-        
+        add_new_event(json_storage_file, json_events_file, project_name_event,date_value, event_descrption, hours_event)
+        list_of_cards, project_names, project_ids = extract_information_df(json_storage_file)
+
     n_clicks_add_event = 0  
     
     return generate_calendar(selected_year, selected_month), title_displayed, date_selected, n_clicks_add_event
@@ -174,13 +176,16 @@ def update_calendar(selected_month, selected_year, date_value, project_name_even
         State('year-dropdown', 'value')]
 )
 def open_event_modal(n_add_event_modal, add_event_btn ,  month, year):
-    list_of_cards, project_names = extract_information_df(json_storage_file)
+    list_of_cards, project_names, project_ids = extract_information_df(json_storage_file)
+
     try:
         first_project = project_names[0]
     except:
         first_project = ''
+        
     intial_month = date(year=year,month=month,day=date.today().day)
     initial_day = date.today()
+    
     options_time = [x * 0.25 for x in range(0, 30)]
     if(n_add_event_modal != 0):
         modal_visible = True
@@ -188,6 +193,6 @@ def open_event_modal(n_add_event_modal, add_event_btn ,  month, year):
         modal_visible = False
     else:
         modal_visible = False
+    
     n_add_event_modal = 0
     return n_add_event_modal, modal_visible, project_names, first_project, intial_month, initial_day,  options_time
-
