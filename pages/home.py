@@ -148,8 +148,8 @@ def manipulate_project_info(n_new, n_edit_save, n_delete, list_of_cards, input_p
         if(n_image_edit != 0):
             list_of_cards, n_image_edit, image_links_edit, image_link = add_image_to_new_project(json_storage_file, selected_project_to_edit,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_link, input_links_edit, input_steps_taken_edit, input_steps_todo_edit)
          # add general link and save edited project
-        elif(n_links_edit != 0):
-            list_of_cards, n_links_edit,links_edit, url_link = add_general_link_to_new_project(json_storage_file, selected_project_to_edit, input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, steps_taken_edit, steps_todo_edit)
+        elif(n_links_edit != 0):                                                           
+            list_of_cards, n_links_edit,links_edit, url_link = add_general_link_to_new_project(json_storage_file, selected_project_to_edit, url_link, input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, input_links_edit, steps_taken_edit, steps_todo_edit)
         # add step taken to save edited project
         elif(n_steps_taken_edit != 0):            
             list_of_cards, n_steps_taken_edit, steps_taken_edit, input_step_taken = add_steps_taken_to_new_project(json_storage_file, selected_project_to_edit, input_step_taken ,input_project_name_edit,input_hobby_name_edit,input_notes_edit, project_status_input_edit, image_links_edit, links_edit,steps_todo_edit)              
